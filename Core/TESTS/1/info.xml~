@@ -1,0 +1,7 @@
+<info>
+	<needPassAll>1</needPassAll>
+	<numberPublicTests>2</numberPublicTests>
+	<numberPrivateTests>2</numberPrivateTests>
+	<limit>1.25</limit>
+	<compilerSample>1</compilerSample>
+</info>

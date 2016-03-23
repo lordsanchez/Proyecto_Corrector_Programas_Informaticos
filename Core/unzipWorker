@@ -1,0 +1,41 @@
+#!/bin/bash
+echo Unziping the document $1 with the id $2 the compresor is $3 adn the anme of the folder is $4
+if [[ $3 = "1" ]]; then
+	echo "The file must be is in fomrat tar.gz"
+	if [ -f $1 ]; then
+		echo "file ${1} exists proced to inspect the folder"
+		folder=./TESTS/$2
+		if [ -d $folder ]; then
+			echo "the folder: ${folder} exists, add problem failed cause, the id is already in use"
+			
+		else
+			echo "folder ${folder} not found --> creating the folder with the problem"
+			mkdir $folder
+			chmod 777 $folder
+			tar xvzf $1 -C $folder
+		fi
+	else
+		echo "EROR, file ${1} dosent exist"
+	fi
+else 
+	if [[ $3 = "2" ]]; then
+	echo "The file must be fomrat rar"
+		if [ -f $1 ]; then
+			echo "file ${1} exists proced to inspect the folder"
+			folder=./TESTS/$2
+			if [ -d $folder ]; then
+				echo "the folder: ${folder} exists, add problem failed cause, the id is already in use"
+				
+			else
+				echo "folder ${folder} not found --> creating the folder with the problem"
+				mkdir $folder
+				chmod 777 $folder
+				unrar x -r $1 $folder
+			fi
+		else
+			echo "EROR, file ${1} dosent exist"
+		fi
+	else
+		echo "The file extension must be rar or tar.gz"
+	fi
+fi

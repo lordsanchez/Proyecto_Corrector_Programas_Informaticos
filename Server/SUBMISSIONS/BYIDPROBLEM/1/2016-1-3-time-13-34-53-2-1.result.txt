@@ -1,0 +1,11 @@
+<result>
+	<error> Error on compilation </error>
+	<comentari>
+codeRecived.cpp: In function ‘int main()’:
+codeRecived.cpp:6:1: error: ‘asd’ was not declared in this scope
+codeRecived.cpp:7:2: error: expected ‘;’ before ‘int’
+codeRecived.cpp:8:9: error: ‘a’ was not declared in this scope
+codeRecived.cpp:8:14: error: ‘b’ was not declared in this scope
+	</comentari>
+	<value> 0 </value>
+</result>

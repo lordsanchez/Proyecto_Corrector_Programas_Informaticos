@@ -1,0 +1,6 @@
+		<publicTime0> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 151.364000 miliseconds </publicTime0>
+		<publicTime1> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 267.790000 miliseconds </publicTime1>
+		<privateTime0> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 402.572000 miliseconds </privateTime0>
+		<privateTime1> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 63.559000 miliseconds </privateTime1>
+	<value> 2 </value>
+</result>

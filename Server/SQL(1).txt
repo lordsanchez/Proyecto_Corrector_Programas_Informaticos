@@ -1,0 +1,128 @@
+CONTINGUT BASE DE DADES D'EXEMPLE:
+create table courses(course_id integer PRIMARY KEY, course_name varchar(128));
+insert into courses(course_name) values('course1');
+insert into courses(course_name) values('course2');
+
+create table users(user_id integer PRIMARY KEY, user_name varchar(128), user_pass varchar(64), user_type integer);
+insert into users(user_name, user_pass, user_type) values('admin', 'admin', 2);
+insert into users(user_name, user_pass, user_type) values('user1', 'user1', 0);
+insert into users(user_name, user_pass, user_type) values('user2', 'user2', 0);
+insert into users(user_name, user_pass, user_type) values('profe1', 'profe1', 1);
+insert into users(user_name, user_pass, user_type) values('profe2', 'profe2', 1);
+
+create table problems(problem_id integer PRIMARY KEY, problem_name varchar(128), problem_type integer);
+insert into problems(problem_id, problem_name) values(1, 'problem1');
+insert into problems(problem_id, problem_name) values(2, 'problem2');
+insert into problems(problem_id, problem_name) values(3, 'problem3');
+
+create table problemInCourse(id PRIMARY KEY, problem_id integer, course_id integer);
+insert into problemInCourse(problem_id, course_id) values(1, 1);
+insert into problemInCourse(problem_id, course_id) values(2, 1);
+insert into problemInCourse(problem_id, course_id) values(3, 1);
+insert into problemInCourse(problem_id, course_id) values(1, 2);
+insert into problemInCourse(problem_id, course_id) values(2, 2);
+
+create table userEnrolledInCourse(id PRIMARY KEY, user_id integer, course_id integer);
+insert into userEnrolledInCourse(user_id, course_id) values(1, 1);
+insert into userEnrolledInCourse(user_id, course_id) values(1, 2);
+insert into userEnrolledInCourse(user_id, course_id) values(2, 1);
+insert into userEnrolledInCourse(user_id, course_id) values(2, 2);
+insert into userEnrolledInCourse(user_id, course_id) values(3, 1);
+insert into userEnrolledInCourse(user_id, course_id) values(4, 2);
+
+create table submissions(id integer PRIMARY KEY, submission_name varchar(128), user_id integer, course_id integer, problem_id integer, result integer);
+insert into submissions(submission_name, user_id, course_id, problem_id, result) values('hola', 1, 1, 1, 3);
+insert into submissions(submission_name, user_id, course_id, problem_id, result) values('que hace', 1, 1, 2, 3);
+insert into submissions(submission_name, user_id, course_id, problem_id, result) values('muy buneas', 2, 1, 1, 3);
+insert into submissions(submission_name, user_id, course_id, problem_id, result) values('jaja', 2, 1, 1, 1);
+insert into submissions(submission_name, user_id, course_id, problem_id, result) values('testing', 2, 1, 1, 2);
+insert into submissions(submission_name, user_id, course_id, problem_id, result) values('molt', 2, 1, 1, 1);
+
+
+
+
+
+CONSULTES ESTADÍSTIQUES QUAN S'HA TESTEJAT LES ESTADÍSTIQUES.
+
+SELECT submission_name, result FROM submissions WHERE course_id = 1 AND problem_id = 1 AND user_id = 1;
+
+cursid -> #problems total in a curs the id curs_id
+SELECT COUNT(DISTINCT problem_id) FROM problemInCourse where course_id = 2; 
+
+cursid -> list of all the problems with the id curs_id
+SELECT DISTINCT problem_name
+FROM problems, problemInCourse   
+WHERE problemInCourse.problem_id =problems.problem_id AND problemInCourse.course_id = 2;
+
+
+
+
+cursid -> #users total in a curs with the id curs_id
+SELECT COUNT(DISTINCT user_id) FROM userEnrolledInCourse where course_id = 1; 
+
+cursid -> #list of all the users enrolled in the course with the id curs_id
+SELECT DISTINCT user_name
+FROM users, userEnrolledInCourse   
+WHERE userEnrolledInCourse.user_id = users.user_id AND userEnrolledInCourse.course_id = 1;
+
+
+
+
+
+GIVEN A COURSE AND A USER
+
+given a course and a user, --> nombre enviaments
+SELECT COUNT(id) FROM submissions where user_id = 2 AND course_id = 1; 
+
+given a course and a user, -->list of all the submissions made by the user
+SELECT (submission_name) FROM submissions where user_id = 1 AND course_id = 1; 
+
+given a course and a user, --> nombre problemes resolts
+SELECT COUNT(DISTINCT problem_id) FROM submissions where user_id = 1 AND course_id = 1 AND result = 3; 
+
+given a course and a user, --> name of the solved problemes 
+SELECT DISTINCT problem_name FROM submissions, problems WHERE submissions.problem_id = problems.problem_id AND user_id = 2 AND course_id = 1 AND result = 3;
+
+
+
+
+GIVEN A COURSE AND A PROBLEM
+# users that solved the problem
+SELECT COUNT(DISTINCT user_id) FROM submissions WHERE problem_id = 1 AND course_id = 1 AND result = 3;
+
+list of users that solved this problem
+SELECT DISTINCT user_name FROM submissions, users WHERE submissions.user_id = users.user_id  AND problem_id = 1 AND course_id = 1 AND result = 3;
+
+
+
+
+
+
+userId--> list of all the courses where it is enrolled
+SELECT DISTINCT course_name, courses.course_id  FROM courses, userEnrolledInCourse WHERE user_id = 4s AND courses.course_id=userEnrolledInCourse.course_id; 
+
+
+testing
+SELECT DISTINCT problem_name, problems.problem_id, course_id FROM problems, problemInCourse WHERE problemInCourse.problem_id = problems.problem_id AND problemInCourse.course_id = 2;
+SELECT DISTINCT user_name, users.user_id, course_id FROM users, userEnrolledInCourse WHERE userEnrolledInCourse.user_id = users.user_id AND userEnrolledInCourse.course_id = 2;
+SELECT user_name FROM users WHERE user_id = 1;
+SELECT problem_name FROM problems WHERE problem_id = 2;
+
+select user_id from users where user_name='admin' and user_pass='admin';
+SELECT DISTINCT problem_name, problems.problem_id, problemInCourse.course_id, result FROM problems, problemInCourse, submissions WHERE problemInCourse.problem_id = problems.problem_id AND problemInCourse.course_id = 2 AND submissions.user_id = 1;
+
+SELECT DISTINCT problem_name, problems.problem_id, course_id FROM problems, problemInCourse WHERE problemInCourse.problem_id = problems.problem_id AND problemInCourse.course_id = 2;
+
+
+SELECT DISTINCT problem_name FROM problems, problemInCourse, submissions WHERE submissions.problem_id = problems.problem_id AND problemInCourse.problem_id = problems.problem_id AND problemInCourse.course_id = 1 AND submissions.user_id = 1 AND submissions.result = 3;
+
+
+SELECT submission_name, problem_name, result FROM submissions, problems WHERE course_id = 1 AND user_id = 1 AND problems.problem_id = submissions.problem_id;
+
+
+
+Compilar el server
+
+gcc Socket.o new.c mongoose.c -pthread -lsqlite3 -o runServer -I /usr/local/include/libxml2/ -lxml2
+
+

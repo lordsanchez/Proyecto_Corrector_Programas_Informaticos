@@ -1,0 +1,17 @@
+		<publicTime0> OK: 5.005000 miliseconds </publicTime0>
+		<publicTime1> OK: 5.385000 miliseconds </publicTime1>
+		<privateTime0> OK: 6.443000 miliseconds </privateTime0>
+		<privateTime1> OK: 3.460000 miliseconds </privateTime1>
+<result>
+	<public0>
+		<comentari0>
+		 there are differneces in this test
+La suma entre els dos nombre positius te un valor incorrecte.
+1c1
+< 1005
+---
+> 995
+		</comentari0>
+	</public0>
+	<value> 1 </value>
+</result>

@@ -1,0 +1,27 @@
+		<publicTime0> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 39.991000 miliseconds </publicTime0>
+		<publicTime1> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 39.510000 miliseconds </publicTime1>
+		<privateTime0> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 41.196000 miliseconds </privateTime0>
+		<privateTime1> FAIL, you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 36.244000 miliseconds </privateTime1>
+		<publicTime0> FAIL: 6.182000 miliseconds </publicTime0>
+HELP professor time = 3.130000 miliseconds, with limit aplied = 3.912500
+		<publicTime1> FAIL: 5.631000 miliseconds </publicTime1>
+HELP professor time = 3.058000 miliseconds, with limit aplied = 3.822500
+		<privateTime0> FAIL: 4.117000 miliseconds </privateTime0>
+HELP professor time = 3.246000 miliseconds, with limit aplied = 4.057500
+		<privateTime1> FAIL: 3.879000 miliseconds </privateTime1>
+HELP professor time = 2.821000 miliseconds, with limit aplied = 3.526250
+<result>
+	<public0>
+		<comentari0> Well done, there are no differences between the solutions in this test</comentari0>
+	</public0>
+	<public1>
+		<comentari1> Well done, there are no differences between the solutions in this test</comentari1>
+	</public1>
+	<private0>
+		<comentari0> Well done, there are no differences between the solutions in this test</comentari0>
+	</private0>
+	<private1>
+		<comentari1> Well done, there are no differences between the solutions in this test</comentari1>
+	</private1>
+	<value> 2 </value>
+</result>

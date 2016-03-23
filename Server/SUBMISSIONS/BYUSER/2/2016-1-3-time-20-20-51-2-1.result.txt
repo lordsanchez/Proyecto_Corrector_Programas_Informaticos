@@ -1,0 +1,13 @@
+<result>
+	<public0>
+		<comentari0>
+		 there are differneces in this test
+La suma entre els dos nombre positius te un valor incorrecte.
+1c1
+< 1005
+---
+> 995
+		</comentari0>
+	</public0>
+	<value> 1 </value>
+</result>

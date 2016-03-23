@@ -1,0 +1,40 @@
+#!/bin/bash
+#This scipt copies the file with the apropiate name in the folders, to keep a copy of all the submissions sended to our server.
+echo copying the document $1, with the date $2, the user id $3, and the id problem $4 
+if [ -f $1 ]; then
+	echo "file ${1} exists proced to inspect the folder"
+	folderUser=./SUBMISSIONS/BYUSER/$3
+	folderIdProblem=./SUBMISSIONS/BYIDPROBLEM/$4
+	submissionName=$2-$3-$4.code.txt
+	if [ -d $folderUser ]; then
+		cp $1 $submissionName
+		chmod 666 $submissionName
+		mv $submissionName $folderUser
+	else
+		echo "folder ${folder} not found --> creating the folder with the problem"
+		cp $1 $submissionName
+		chmod 666 $submissionName
+		mkdir $folderUser
+		chmod 777 $folderUser
+		mv $submissionName $folderUser
+		
+	fi
+	if [ -d $folderIdProblem ]; then
+		
+		cp $1 $submissionName
+		chmod 666 $submissionName
+		mv $submissionName $folderIdProblem
+	else
+		echo "folder ${folder} not found --> creating the folder with the problem"
+		cp $1 $submissionName
+		chmod 666 $submissionName
+		mkdir $folderIdProblem
+		chmod 777 $folderIdProblem
+		mv $submissionName $folderIdProblem
+		
+	fi
+else
+	echo "EROR, file ${1} dosent exist"
+fi
+
+	

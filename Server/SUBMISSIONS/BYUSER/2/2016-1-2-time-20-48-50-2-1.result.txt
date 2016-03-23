@@ -1,0 +1,6 @@
+		<publicTime0> FAIL, process TERMINATED you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 523.865000 miliseconds </publicTime0>
+		<publicTime1> FAIL, process TERMINATED you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 854.160000 miliseconds </publicTime1>
+		<privateTime0> FAIL, process TERMINATED you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 837.498000 miliseconds </privateTime0>
+		<privateTime1> FAIL, process TERMINATED you exceded the maximum execution time allowed, check you aren't doing and infinite loop t: 4523.648000 miliseconds </privateTime1>
+	<value> 2 </value>
+</result>

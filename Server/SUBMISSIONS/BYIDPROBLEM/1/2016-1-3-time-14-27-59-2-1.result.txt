@@ -1,0 +1,19 @@
+		<publicTime0> OK: 3.940000 miliseconds </publicTime0>
+		<publicTime1> OK: 7.777000 miliseconds </publicTime1>
+		<privateTime0> OK: 4.635000 miliseconds </privateTime0>
+		<privateTime1> OK: 17.387000 miliseconds </privateTime1>
+<result>
+	<public0>
+		<comentari0> Well done, there are no differences between the solutions in this test</comentari0>
+	</public0>
+	<public1>
+		<comentari1> Well done, there are no differences between the solutions in this test</comentari1>
+	</public1>
+	<private0>
+		<comentari0> Well done, there are no differences between the solutions in this test</comentari0>
+	</private0>
+	<private1>
+		<comentari1> Well done, there are no differences between the solutions in this test</comentari1>
+	</private1>
+	<value> 3 </value>
+</result>

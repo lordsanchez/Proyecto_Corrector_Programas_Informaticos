@@ -1,0 +1,22 @@
+	<error> The problem is not correctly created, please contact your professor or the admins to solve this problem, there is a problem with the profeesor code</error>
+	<value> -1 </value>
+</result>
+SendFile:the message has length= 12, message = 12:-1:-1:4:46:0
+		<publicTime0> OK: 3.783000 miliseconds </publicTime0>
+		<publicTime1> OK: 3.820000 miliseconds </publicTime1>
+		<privateTime0> OK: 4.111000 miliseconds </privateTime0>
+		<privateTime1> FAIL: 6.799000 miliseconds </privateTime1>
+HELP professor time = 3.073000 miliseconds, with limit aplied = 3.841250
+<result>
+	<public0>
+		<comentari0>
+		 there are differneces in this test
+La suma entre els dos nombre positius te un valor incorrecte.
+1c1
+< 1005
+---
+> 995
+		</comentari0>
+	</public0>
+	<value> 1 </value>
+</result>

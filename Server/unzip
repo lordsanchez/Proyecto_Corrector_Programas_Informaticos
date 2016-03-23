@@ -1,0 +1,20 @@
+#!/bin/bash
+echo Unziping the document $1 with the id $2
+echo "The file must be is in fomrat tar.gz"
+if [ -f $1 ]; then
+	echo "file ${1} exists proced to inspect the folder"
+	folder=./PROBLEMS/$2
+	if [ -d $folder ]; then
+		echo "the folder: ${folder} exists, add problem failed cause, the id is already in use"
+		
+	else
+		echo "folder ${folder} not found --> creating the folder with the problem"
+		mkdir $folder
+		chmod 777 $folder
+		tar xvzf $1 -C $folder
+		cd $folder
+	fi
+else
+	echo "EROR, file ${1} dosent exist"
+fi
+

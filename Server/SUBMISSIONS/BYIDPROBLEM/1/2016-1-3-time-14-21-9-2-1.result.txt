@@ -1,0 +1,8 @@
+		<publicTime0> FAIL: 7.558000 miliseconds </publicTime0>
+HELP professor time = 3.720000 miliseconds, with limit aplied = 4.650000
+		<publicTime1> OK: 3.144000 miliseconds </publicTime1>
+		<privateTime0> OK: 6.149000 miliseconds </privateTime0>
+		<privateTime1> FAIL: 5.907000 miliseconds </privateTime1>
+HELP professor time = 3.166000 miliseconds, with limit aplied = 3.957500
+	<value> 2 </value>
+</result>

@@ -1,0 +1,12 @@
+#!/bin/bash
+echo Abriendo interficie para pruebas del judge
+make clean
+make
+gnome-terminal --window -x ./Gestor pworker pclient& 
+sleep 1
+
+gnome-terminal --window -x ./Worker localhost pworker localhost pworker0 &
+#sleep 1
+#gnome-terminal --window -x ./Worker localhost pworker localhost pworker1 &
+
+

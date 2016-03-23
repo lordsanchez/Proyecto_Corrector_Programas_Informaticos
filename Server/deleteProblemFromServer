@@ -1,0 +1,9 @@
+#!/bin/bash
+#This scipt copies the file with the apropiate name in the folders, to keep a copy of all the submissions sended to our server.
+echo deleting the problem with identifier $1 
+	
+folder=./PROBLEMS/$1
+rm -r $folder
+
+
+	

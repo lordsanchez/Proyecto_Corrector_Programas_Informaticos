@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<info>
+	<needPassALL>9</needPassALL>
+	<numberPublicTest>2</numberPublicTest>
+	<numberPrivateTests>2</numberPrivateTests>
+	<limit>1.25</limit>
+	<sampleLenguage>1</sampleLenguage>
+</info>
